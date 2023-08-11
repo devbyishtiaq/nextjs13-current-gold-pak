@@ -6,6 +6,8 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./ui/**/*.{js,ts,jsx,tsx,mdx}",
+    "./icons/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   mode: "jit",
   theme: {
@@ -22,6 +24,10 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
+      },
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(180deg, #B96A00 0%, #AF8901 51%, #E1BC00 100%)",
       },
       colors: {
         primary: {
