@@ -17,9 +17,6 @@ import { Footer } from "@/ui/Footer";
 const HomePage: NextPage = () => {
   return (
     <React.Fragment>
-      <Head>
-        <title>Home - Current.Gold</title>
-      </Head>
       <HeroSection />
       <WhoWeAre />
       <GoldCalculator />
