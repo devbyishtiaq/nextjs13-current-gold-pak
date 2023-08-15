@@ -29,6 +29,9 @@ const config: Config = {
         "custom-gradient":
           "linear-gradient(180deg, #B96A00 0%, #AF8901 51%, #E1BC00 100%)",
       },
+      backgroundSize: {
+        "70%": "70%",
+      },
       colors: {
         primary: {
           400: "#48B2E2",

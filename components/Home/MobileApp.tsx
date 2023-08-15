@@ -7,7 +7,7 @@ const MobileApp: FC = () => {
   return (
     <section
       id="mobileapp"
-      className="relative bg-white flex h-[calc(100vh_-_65vh)] sm:h-[calc(100vh_-_50vh)] items-center justify-center lg:h-[calc(100vh_-_35vh)] bg-[url('/assets/coming-soon.svg')] bg-no-repeat bg-center px-4"
+      className="relative bg-white flex h-[calc(100vh_-_65vh)] sm:h-[calc(100vh_-_50vh)] items-center justify-center lg:h-[calc(100vh_-_35vh)] bg-[url('/assets/coming-soon.svg')] bg-no-repeat px-4 bg-center bg-70%"
     >
       <div className="flex items-center h-full ">
         <div className="max-w-lg md:min-w-[32rem] sm:w-96 text-center sm:text-left">
