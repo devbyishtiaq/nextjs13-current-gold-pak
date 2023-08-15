@@ -3,7 +3,7 @@ import { useState, FC } from "react";
 
 import { TabNavItem } from "./TabNavItem";
 import { TabContent } from "./TabContent";
-import { GreenArrow, RedArrow } from "@/icons";
+import { RedArrow } from "@/icons";
 
 const GoldRatesGeneral: FC = () => {
   const [activeTab, setActiveTab] = useState("tab1");

@@ -1,7 +1,6 @@
-"use client";
-import { AppleIcon, PlaystoreIcon } from "@/icons";
-import Image from "next/image";
 import { FC } from "react";
+import Image from "next/image";
+import { AppleIcon, PlaystoreIcon } from "@/icons";
 
 const MobileApp: FC = () => {
   return (

@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState, useMemo } from "react";
-import { FC } from "react";
+import React, { useEffect, useState, useMemo, FC } from "react";
 import { Loader } from "@/ui";
 
 enum Units {

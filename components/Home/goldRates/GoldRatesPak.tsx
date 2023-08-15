@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, FC } from "react";
+import React, { useState, FC } from "react";
 import { Loader } from "@/ui";
 import { TabNavItem } from "./TabNavItem";
 import { TabContent } from "./TabContent";
