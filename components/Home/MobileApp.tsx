@@ -1,5 +1,5 @@
 "use client";
-import { AppleIcon } from "@/icons";
+import { AppleIcon, PlaystoreIcon } from "@/icons";
 import Image from "next/image";
 import { FC } from "react";
 
@@ -23,7 +23,7 @@ const MobileApp: FC = () => {
           <div className="flex items-center sm:justify-start justify-center gap-1 sm:gap-4 mt-5 ">
             {/* google play */}
             <div className="bg-black cursor-pointer rounded-md flex items-center justify-center gap-2 py-1 px-2 min-w-[150px]">
-              <img src="assets/Playstore.svg" alt="" />
+              <PlaystoreIcon className="w-7" />
               <div className="flex flex-col">
                 <span className="text-white text-xs">Get it on</span>
                 <span className="text-white text-sm sm:text-md">
@@ -33,7 +33,7 @@ const MobileApp: FC = () => {
             </div>
             {/* app store */}
             <div className="bg-black cursor-pointer rounded-md flex items-center justify-center gap-1 py-1 px-2 min-w-[150px]">
-              <AppleIcon />
+              <AppleIcon className="w-6 h-7" />
               <div className="flex flex-col">
                 <span className="text-white text-xs">Donwload on the</span>
                 <span className="text-white text-sm sm:text-md">App Store</span>

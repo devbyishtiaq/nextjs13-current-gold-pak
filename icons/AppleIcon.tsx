@@ -7,6 +7,7 @@ function AppleIcon(props: React.SVGProps<SVGSVGElement>) {
       width="33.729"
       height="39.099"
       viewBox="0 0 33.729 39.099"
+      className={props.className}
     >
       <g id="Group_4880" transform="translate(-139.661 -383.076)">
         <path

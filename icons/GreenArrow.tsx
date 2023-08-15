@@ -7,6 +7,7 @@ function GreenArrow(props: React.SVGProps<SVGSVGElement>) {
       width="16"
       height="14"
       viewBox="0 0 16 14"
+      className={props.className}
     >
       <path
         id="Polygon_4"

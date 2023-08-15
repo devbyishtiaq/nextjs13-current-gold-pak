@@ -10,6 +10,7 @@ const Polygon = (props: React.SVGProps<SVGSVGElement>) => {
       width="33.877"
       height="39.212"
       viewBox="0 0 33.877 39.212"
+      className={props.className}
     >
       <defs>
         <linearGradient

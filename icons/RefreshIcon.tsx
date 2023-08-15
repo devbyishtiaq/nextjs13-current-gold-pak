@@ -8,6 +8,7 @@ function RefreshIcon(props: React.SVGProps<SVGSVGElement>) {
       width="55.748"
       height="46.506"
       viewBox="0 0 55.748 46.506"
+      className={props.className}
     >
       <defs>
         <linearGradient

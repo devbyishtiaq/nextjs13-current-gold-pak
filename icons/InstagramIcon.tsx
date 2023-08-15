@@ -7,6 +7,7 @@ function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
       viewBox="0 0 48 48"
       width="38px"
       height="38px"
+      className={props.className}
     >
       <radialGradient
         id="yOrnnhliCrdS2gy~4tD8ma"

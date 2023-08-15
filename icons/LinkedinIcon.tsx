@@ -7,6 +7,7 @@ function LinkedinIcon(props: React.SVGProps<SVGSVGElement>) {
       viewBox="0 0 48 48"
       width="38px"
       height="38px"
+      className={props.className}
     >
       <path fill="#0288d1" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z" />
       <path

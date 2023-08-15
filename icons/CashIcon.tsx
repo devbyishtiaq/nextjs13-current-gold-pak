@@ -10,6 +10,7 @@ function CashIcon(props: React.SVGProps<SVGSVGElement>) {
       width="58.116"
       height="41.511"
       viewBox="0 0 58.116 41.511"
+      className={props.className}
     >
       <defs>
         <linearGradient

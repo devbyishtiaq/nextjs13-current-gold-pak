@@ -8,6 +8,7 @@ function MoneyIcon(props: React.SVGProps<SVGSVGElement>) {
       width="25.005"
       height="44.213"
       viewBox="0 0 25.005 44.213"
+      className={props.className}
     >
       <defs>
         <linearGradient

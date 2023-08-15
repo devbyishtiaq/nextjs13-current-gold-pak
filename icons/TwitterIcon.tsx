@@ -7,6 +7,7 @@ function TwitterIcon(props: React.SVGProps<SVGSVGElement>) {
       viewBox="0 0 48 48"
       width="38px"
       height="38px"
+      className={props.className}
     >
       <path
         fill="#03a9f4"

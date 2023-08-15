@@ -9,6 +9,7 @@ import InstagramIcon from "./InstagramIcon";
 import LinkedinIcon from "./LinkedinIcon";
 import TwitterIcon from "./TwitterIcon";
 import AppleIcon from "./AppleIcon";
+import PlaystoreIcon from "./PlaystoreIcon";
 
 export {
   Polygon,
@@ -22,4 +23,5 @@ export {
   LinkedinIcon,
   TwitterIcon,
   AppleIcon,
+  PlaystoreIcon,
 };

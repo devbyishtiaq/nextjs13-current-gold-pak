@@ -42,7 +42,6 @@ const Navebar: FC<Navebar> = ({ className = "" }) => {
                     src="/assets/logo.png"
                   />
                 </Link>
-
                 <div className="md:hidden">
                   <button
                     className="rounded-md p-2 text-gray-700 outline-none focus:border focus:border-gray-400"
