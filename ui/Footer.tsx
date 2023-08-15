@@ -30,10 +30,11 @@ export const Footer = () => {
           <Link href="/">
             <Image
               src="/assets/logo.png"
-              width={96}
-              height={96}
+              width={0}
+              height={0}
               alt="Current Gold"
-              className="h-20 w-auto md:h-24"
+              sizes="100vw"
+              className="w-20 md:w-24 h-auto"
             />
           </Link>
           <p className="mt-5 w-auto text-sm leading-6 text-gray-500 md:w-72">

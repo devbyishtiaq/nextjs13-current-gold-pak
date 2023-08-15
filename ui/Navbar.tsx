@@ -34,11 +34,12 @@ const Navebar: FC<Navebar> = ({ className = "" }) => {
               <div className="flex items-center justify-between">
                 <Link href="/">
                   <Image
-                    width={80}
-                    height={80}
-                    className="h-20 md:h-24 w-auto"
-                    src="/assets/logo.png"
+                    width={0}
+                    height={0}
                     alt="Current Gold"
+                    sizes="100vw"
+                    className="w-16 md:w-20 h-auto"
+                    src="/assets/logo.png"
                   />
                 </Link>
 

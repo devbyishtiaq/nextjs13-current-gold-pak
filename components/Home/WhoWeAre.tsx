@@ -26,11 +26,12 @@ const WhoWeAre: FC = () => {
           {/* graph */}
           <div className="flex items-center justify-center p-8">
             <Image
-              width={488}
-              height={359}
               alt="Prgoress Graph"
               src="assets/wegraph.svg"
-              className="w-auto"
+              width="0"
+              height="0"
+              sizes="100vw"
+              className="w-full h-auto"
             />
           </div>
         </div>

@@ -112,9 +112,8 @@ const GoldCalculator: FC = ({}) => {
           throw new Error("Request failed");
         }
         const jsonData = await response.json();
-        console.log(jsonData);
 
-        setTodayRate(jsonData);
+        setTodayRate(jsonData[0].rate);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
