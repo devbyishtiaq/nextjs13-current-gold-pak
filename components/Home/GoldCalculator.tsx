@@ -43,7 +43,7 @@ const GoldCalculator: FC = ({}) => {
   const [units, setUnits] = useState<Units>(Units.Grams);
   const [purity, setPurity] = useState<number>(24);
   const [todayRate, setTodayRate] = useState<number>(0);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | undefined>("");
 
   const goldRates = useMemo(() => {
@@ -98,6 +98,7 @@ const GoldCalculator: FC = ({}) => {
   useEffect(() => {
     const fetchGoldRate = async () => {
       try {
+        setIsLoading(true);
         const response = await fetch(
           `https://goldrate.creationnext.com/api/currentgold`,
           {
