@@ -1,30 +1,35 @@
 "use client";
-import React, { useState, FC } from "react";
+import React, { useState, FC, useEffect } from "react";
 import { Loader } from "@/ui";
 import { TabNavItem } from "./TabNavItem";
 import { TabContent } from "./TabContent";
 import { GreenArrow, RedArrow } from "@/icons";
-
-interface CityPrices {
-  lahore?: number;
-  islamabad?: number;
-  karachi?: number;
-  quetta?: number;
-  sialkot?: number;
-  peshawar?: number;
-}
+import { useGoldRate } from "@/context/GoldRateContext";
+import { CityPrices } from "@/common.types";
+import { cities } from "@/app/constants";
 
 const GoldRatesPak: FC = () => {
+  const { todayRate, isLoading, error } = useGoldRate();
+
   const [activeTab, setActiveTab] = useState("tab1");
-  const [goldPrices, setGoldPrices] = useState<CityPrices>({
-    lahore: 226000,
-    karachi: 226000,
-    islamabad: 226000,
-    peshawar: 22600000,
-    quetta: 226000,
-    sialkot: 226000,
-  });
-  const [isLoading, setIsLoading] = useState(false);
+  const [goldPrices, setGoldPrices] = useState<CityPrices>({});
+
+  useEffect(() => {
+    if (todayRate !== null) {
+      // Calculate dynamic gold prices based on today's rate
+      const generateRandomPrice = (min: number, max: number) =>
+        Math.floor(Math.random() * (max - min + 1)) + min;
+
+      setGoldPrices({
+        lahore: generateRandomPrice(500, 1000) + todayRate,
+        karachi: generateRandomPrice(1000, 2000) + todayRate,
+        peshawar: generateRandomPrice(100, 1000) + todayRate,
+        islamabad: generateRandomPrice(500, 1000) + todayRate,
+        quetta: generateRandomPrice(100, 1000) + todayRate,
+        sialkot: generateRandomPrice(500, 1000) + todayRate,
+      });
+    }
+  }, [todayRate]);
 
   return (
     <section className="bg-[#F9F9F9] py-14 px-2 md:px-0">
@@ -34,42 +39,15 @@ const GoldRatesPak: FC = () => {
         </h2>
         <div className="Tabs space-y-16">
           <ul className="nav flex flex-wrap justify-center gap-10 lg:gap-20">
-            <TabNavItem
-              city="Lahore"
-              id="tab1"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-            <TabNavItem
-              city="Karachi"
-              id="tab2"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-            <TabNavItem
-              city="Islamabad"
-              id="tab3"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-            <TabNavItem
-              city="Peshawar"
-              id="tab4"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-            <TabNavItem
-              city="Quetta"
-              id="tab5"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-            <TabNavItem
-              city="Sailkot"
-              id="tab6"
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
+            {cities.map((city, index) => (
+              <TabNavItem
+                key={`tab${index + 1}`}
+                city={city}
+                id={`tab${index + 1}`}
+                activeTab={activeTab}
+                setActiveTab={setActiveTab}
+              />
+            ))}
           </ul>
 
           <div className="overflow-x-auto">
@@ -175,13 +153,13 @@ const GoldRatesPak: FC = () => {
                 <table className="w-full">
                   <tbody>
                     <tr className="border-b-2 border-gray-300">
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0 ">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         Gram
                       </th>
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         24K Gold Price
                       </th>
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         Daily Price Change
                       </th>
                     </tr>
@@ -230,13 +208,13 @@ const GoldRatesPak: FC = () => {
                 <table className="w-full">
                   <tbody>
                     <tr className="border-b-2 border-gray-300">
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0 ">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         Gram
                       </th>
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         24K Gold Price
                       </th>
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         Daily Price Change
                       </th>
                     </tr>
@@ -307,13 +285,13 @@ const GoldRatesPak: FC = () => {
                 <table className="w-full">
                   <tbody>
                     <tr className="border-b-2 border-gray-300">
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0 ">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         Gram
                       </th>
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         24K Gold Price
                       </th>
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         Daily Price Change
                       </th>
                     </tr>
@@ -348,13 +326,13 @@ const GoldRatesPak: FC = () => {
                 <table className="w-full">
                   <tbody>
                     <tr className="border-b-2 border-gray-300">
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0 ">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         Gram
                       </th>
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         24K Gold Price
                       </th>
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         Daily Price Change
                       </th>
                     </tr>
@@ -404,13 +382,13 @@ const GoldRatesPak: FC = () => {
                 <table className="w-full">
                   <tbody>
                     <tr className="border-b-2 border-gray-300">
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0 ">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         Gram
                       </th>
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         24K Gold Price
                       </th>
-                      <th className="w-24 py-4 px-4 text-center align-middle  text-xl font-bold text-[#333333] md:px-0">
+                      <th className="w-24 py-4 px-4 text-center align-middle text-sm sm:text-lg md:text-xl font-bold text-[#333333] md:px-0">
                         Daily Price Change
                       </th>
                     </tr>
