@@ -1,12 +1,8 @@
 "use client";
 import React, { useEffect, useState, useMemo, FC } from "react";
 import { Loader } from "@/ui";
-
-enum Units {
-  Grams = "grams",
-  Tola = "tola",
-  Ounces = "ounces",
-}
+import { useGoldRate } from "@/context/GoldRateContext";
+import { Units } from "@/common.types";
 
 interface GoldRate {
   units: Units;
@@ -17,7 +13,7 @@ interface GoldRate {
 const calculateTotalPrice = (
   weight: number,
   goldRates: GoldRate[],
-  units: string,
+  units: Units,
   purity: number
 ) => {
   const selectedRate = goldRates.find(
@@ -35,16 +31,14 @@ let curDate = new Date()
   .split("-")
   .reverse()
   .join("-");
-console.log(curDate);
 
 const GoldCalculator: FC = ({}) => {
+  const { todayRate, isLoading, error } = useGoldRate();
+
   const [totalPrice, setTotalPrice] = useState<number>(0);
   const [weight, setWeight] = useState<number>(10);
   const [units, setUnits] = useState<Units>(Units.Grams);
   const [purity, setPurity] = useState<number>(24);
-  const [todayRate, setTodayRate] = useState<number>(0);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | undefined>("");
 
   const goldRates = useMemo(() => {
     return [
@@ -94,35 +88,6 @@ const GoldCalculator: FC = ({}) => {
     setWeight(Number(event.target.value));
     setTotalPrice(calculateTotalPrice(weight, goldRates, units, purity));
   };
-
-  useEffect(() => {
-    const fetchGoldRate = async () => {
-      try {
-        setIsLoading(true);
-        const response = await fetch(
-          `https://goldrate.creationnext.com/api/currentgold`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-
-        if (!response.ok) {
-          throw new Error("Request failed");
-        }
-        const jsonData = await response.json();
-
-        setTodayRate(jsonData[0].rate);
-        setIsLoading(false);
-      } catch (error) {
-        setIsLoading(false);
-        setError((error as Error).message);
-      }
-    };
-
-    fetchGoldRate();
-  }, []);
 
   return (
     <section

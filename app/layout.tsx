@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { GoldRateProvider } from "@/context/GoldRateContext";
 
 export const metadata: Metadata = {
   title: "Gold Rate Pakistan",
@@ -21,7 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <GoldRateProvider>
+        <body>{children}</body>
+      </GoldRateProvider>
     </html>
   );
 }

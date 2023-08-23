@@ -41,7 +41,7 @@ const MobileApp: FC = () => {
           </div>
         </div>
         {/* mobile */}
-        <div className="h-full flex items-end relative z-50 overflow-hidden ">
+        <div className="h-full flex items-end relative z-50 overflow-hidden">
           <Image
             src="assets/mobile.svg"
             alt="mobile phone"
