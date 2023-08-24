@@ -3,6 +3,7 @@ import React, { useEffect, useState, useMemo, FC } from "react";
 import { Loader } from "@/ui";
 import { useGoldRate } from "@/context/GoldRateContext";
 import { Units } from "@/common.types";
+import formatDate from "@/helpers/dateFormatter";
 
 interface GoldRate {
   units: Units;
@@ -24,13 +25,6 @@ const calculateTotalPrice = (
   }
   return 0;
 };
-
-let curDate = new Date()
-  .toISOString()
-  .replace(/T.*/, "")
-  .split("-")
-  .reverse()
-  .join("-");
 
 const GoldCalculator: FC = ({}) => {
   const { todayRate, isLoading, error } = useGoldRate();
@@ -97,7 +91,8 @@ const GoldCalculator: FC = ({}) => {
     >
       <div className="absolute inset-0 flex flex-col items-center justify-center space-y-3 bg-black/70 px-2 md:space-y-5">
         <h2 className="text-xl md:text-3xl font-semibold text-white">
-          Today's Gold Price <span className="text-yellow-500">{curDate}</span>
+          Today's Gold Price{" "}
+          <span className="text-yellow-500">{formatDate(new Date())}</span>
         </h2>
         <div className="space-x-2 space-y-2 md:space-x-5">
           <button
