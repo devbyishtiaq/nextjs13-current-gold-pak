@@ -25,7 +25,7 @@ let curYear = new Date().getFullYear();
 export const Footer = () => {
   return (
     <footer className="bg-black relative z-10">
-      <div className="flex flex-wrap justify-between border-b-2  border-gray-900 px-4 py-12 md:py-20 lg:justify-evenly">
+      <div className="flex flex-wrap justify-between border-b-2 md:space-y-0 space-y-4 border-gray-900 px-4 py-6 md:py-12 lg:justify-evenly">
         <div className="">
           <Link href="/">
             <Image
@@ -59,21 +59,15 @@ export const Footer = () => {
             </Link>
           </div>
         </div>
-        <div className="">
+        <div className="flex flex-col justify-center">
           <h4 className="text-white">Contact</h4>
           <ul className="mt-5 cursor-pointer text-sm leading-8  text-gray-500">
             <li>Phone: +91 254 541 254</li>
             <li>Fax : +44 161 999 8888</li>
             <li>Email: email@CGgold.com</li>
-            <li>
-              <h4 className="mt-10 text-white">Help</h4>
-            </li>
-            <li>Help center</li>
-            <li>Item support</li>
-            <li>Customer refunds</li>
           </ul>
         </div>
-        <div className="">
+        <div className="flex flex-col justify-center">
           <h4 className="text-white">Opening Hours</h4>
           <ul className="mt-5 cursor-pointer text-sm leading-8  text-gray-500">
             <li>
@@ -83,15 +77,9 @@ export const Footer = () => {
               Saturday to Sunday<span className="ml-5">12 pm - 6 pm</span>{" "}
             </li>
             <li>Open 24 Hours in Online</li>
-            <li>
-              <h4 className="mt-10 text-white">Our Commuinity</h4>
-            </li>
-            <li>Forums</li>
-            <li>Community hub</li>
-            <li>Meetup</li>
           </ul>
         </div>
-        <div className="">
+        <div className="flex flex-col justify-center">
           <h4 className="text-white">Quick Links</h4>
           <ul className="mt-5 cursor-pointer text-sm leading-8  text-gray-500">
             <li>
@@ -101,14 +89,8 @@ export const Footer = () => {
               <Link href="/#">Privacy Policy</Link>
             </li>
             <li>
-              <Link href="/#">Terms</Link>
+              <Link href="/#">Help Center</Link>
             </li>
-            <li>
-              <h4 className="mt-10 text-white">Company</h4>
-            </li>
-            <li>Terms</li>
-            <li>Licenses</li>
-            <li>Become an affiliate</li>
           </ul>
         </div>
       </div>
