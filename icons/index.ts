@@ -10,6 +10,8 @@ import LinkedinIcon from "./LinkedinIcon";
 import TwitterIcon from "./TwitterIcon";
 import AppleIcon from "./AppleIcon";
 import PlaystoreIcon from "./PlaystoreIcon";
+import SidebarMobileClose from "./SidebarMobileClose";
+import SidebarMobileHamburger from "./SidebarMobileHamburger";
 
 export {
   Polygon,
@@ -24,4 +26,6 @@ export {
   TwitterIcon,
   AppleIcon,
   PlaystoreIcon,
+  SidebarMobileClose,
+  SidebarMobileHamburger,
 };

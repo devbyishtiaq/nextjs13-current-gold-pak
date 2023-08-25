@@ -9,20 +9,9 @@ import {
 } from "@/icons";
 import Image from "next/image";
 
-const navigation = [
-  {
-    name: "Privacy Policy",
-    href: "#",
-  },
-  {
-    name: "Contact & Support",
-    href: "#",
-  },
-];
-
 let curYear = new Date().getFullYear();
 
-export const Footer = () => {
+export const Footer: FC = () => {
   return (
     <footer className="bg-black relative z-10">
       <div className="flex flex-wrap justify-between border-b-2 md:space-y-0 space-y-4 border-gray-900 px-4 py-6 md:py-12 lg:justify-evenly">

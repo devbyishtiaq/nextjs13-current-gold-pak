@@ -9,7 +9,7 @@ body {
   font-size: 1rem;
 }
 main {
-  min-height: calc(100vh - 80px - 98px);
+  min-height: calc(100vh - 80px - 116px);
 }
 /* nprogress */
 #nprogress .bar {
