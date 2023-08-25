@@ -18,7 +18,7 @@ const sideNavigation = [
   },
   {
     name: "Write Article",
-    href: "/add-blog",
+    href: "/admin/add-blog",
     icon: <ChartPieIcon className={iconClass} />,
   },
 ];

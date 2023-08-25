@@ -12,6 +12,7 @@ import AppleIcon from "./AppleIcon";
 import PlaystoreIcon from "./PlaystoreIcon";
 import SidebarMobileClose from "./SidebarMobileClose";
 import SidebarMobileHamburger from "./SidebarMobileHamburger";
+import EditIcon from "./EditIcon";
 
 export {
   Polygon,
@@ -28,4 +29,5 @@ export {
   PlaystoreIcon,
   SidebarMobileClose,
   SidebarMobileHamburger,
+  EditIcon,
 };
