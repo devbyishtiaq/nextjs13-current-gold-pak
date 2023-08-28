@@ -74,7 +74,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : (
                           goldPrices?.lahore?.toFixed(0)
                         )}{" "}
@@ -93,7 +93,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : goldPrices.lahore ? (
                           (goldPrices.lahore * 5)?.toFixed(0)
                         ) : (
@@ -114,7 +114,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : goldPrices?.lahore ? (
                           (goldPrices?.lahore * 10)?.toFixed(0)
                         ) : (
@@ -135,7 +135,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : goldPrices?.lahore ? (
                           (goldPrices?.lahore * 100)?.toFixed(0)
                         ) : (
@@ -175,7 +175,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : (
                           goldPrices?.karachi?.toFixed(0)
                         )}{" "}
@@ -194,7 +194,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : goldPrices?.karachi ? (
                           (goldPrices?.karachi * 5)?.toFixed(0)
                         ) : (
@@ -234,7 +234,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : (
                           goldPrices?.islamabad?.toFixed(0)
                         )}{" "}
@@ -254,7 +254,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : goldPrices?.islamabad ? (
                           (goldPrices?.islamabad * 10)?.toFixed(0)
                         ) : (
@@ -275,7 +275,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : goldPrices?.islamabad ? (
                           (goldPrices?.islamabad * 100)?.toFixed(0)
                         ) : (
@@ -316,7 +316,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : goldPrices?.peshawar ? (
                           (goldPrices?.peshawar * 100)?.toFixed(0)
                         ) : (
@@ -356,7 +356,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : (
                           goldPrices?.quetta?.toFixed(0)
                         )}{" "}
@@ -376,7 +376,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : goldPrices?.quetta ? (
                           (goldPrices?.quetta * 100)?.toFixed(0)
                         ) : (
@@ -416,7 +416,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : (
                           goldPrices?.sialkot?.toFixed(0)
                         )}{" "}
@@ -435,7 +435,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : goldPrices?.sialkot ? (
                           (goldPrices?.sialkot * 5)?.toFixed(0)
                         ) : (
@@ -457,7 +457,7 @@ const GoldRatesPak: FC = () => {
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
                         {isLoading ? (
-                          <Loader />
+                          <Loader center />
                         ) : goldPrices?.sialkot ? (
                           (goldPrices?.sialkot * 100)?.toFixed(0)
                         ) : (

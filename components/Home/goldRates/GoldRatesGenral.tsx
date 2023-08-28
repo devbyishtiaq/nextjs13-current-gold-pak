@@ -1,12 +1,33 @@
 "use client";
-import { useState, FC } from "react";
-
+import { useState, FC, useMemo } from "react";
+import { useGoldRate } from "@/context/GoldRateContext";
 import { TabNavItem } from "./TabNavItem";
 import { TabContent } from "./TabContent";
 import { RedArrow } from "@/icons";
+import { Loader } from "@/ui";
 
 const GoldRatesGeneral: FC = () => {
+  const { todayRate, isLoading, error } = useGoldRate();
+
   const [activeTab, setActiveTab] = useState("tab1");
+
+  const gramRate = todayRate / 31.1;
+
+  // Define the gold rates for different purities
+  const goldRates = useMemo(
+    () => ({
+      24: {
+        gram: todayRate / 31.1,
+      },
+      22: {
+        gram: (0.916666 * 11.664 * todayRate) / 31.1 / 11.664,
+      },
+      21: {
+        gram: (0.875 * 11.664 * todayRate) / 31.1 / 11.664,
+      },
+    }),
+    [todayRate]
+  );
 
   return (
     <section className="bg-white">
@@ -58,8 +79,13 @@ const GoldRatesGeneral: FC = () => {
                       <td className="py-4 font-semibold  text-[#333333]">
                         1 Gram
                       </td>
-                      <td className="py-4 font-semibold text-[#333333] ">
-                        12930 <span className="ml-2 text-xs">PKR</span>
+                      <td className="py-4 font-semibold text-[#333333]">
+                        {isLoading ? (
+                          <Loader center />
+                        ) : (
+                          goldRates[24].gram.toFixed(0)
+                        )}{" "}
+                        <span className="ml-2 text-xs">PKR</span>
                       </td>
                       <td className="flex items-center justify-center py-4 font-semibold text-[#333333]">
                         +0.54%
@@ -73,7 +99,12 @@ const GoldRatesGeneral: FC = () => {
                         5 Gram
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
-                        130,440 <span className="ml-2 text-xs">PKR</span>
+                        {isLoading ? (
+                          <Loader center />
+                        ) : (
+                          (goldRates[24].gram * 5).toFixed(0)
+                        )}{" "}
+                        <span className="ml-2 text-xs">PKR</span>
                       </td>
                       <td className="flex items-center justify-center py-4 font-semibold text-[#333333]">
                         +0.54%
@@ -95,7 +126,7 @@ const GoldRatesGeneral: FC = () => {
                         Gram
                       </th>
                       <th className="w-24 py-4 text-center align-middle text-xl font-bold text-[#333333]">
-                        24K Gold Price
+                        22K Gold Price
                       </th>
                       <th className="w-24 py-4 text-center align-middle text-xl font-bold text-[#333333]">
                         Daily Price Change
@@ -107,7 +138,12 @@ const GoldRatesGeneral: FC = () => {
                         5 Gram
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
-                        130,440 <span className="ml-2 text-xs">PKR</span>
+                        {isLoading ? (
+                          <Loader center />
+                        ) : (
+                          (goldRates[22].gram * 5).toFixed(0)
+                        )}{" "}
+                        <span className="ml-2 text-xs">PKR</span>
                       </td>
                       <td className="flex items-center justify-center py-4 font-semibold text-[#333333]">
                         +0.54%
@@ -129,7 +165,7 @@ const GoldRatesGeneral: FC = () => {
                         Gram
                       </th>
                       <th className="w-24 py-4 text-center align-middle text-xl font-bold text-[#333333]">
-                        24K Gold Price
+                        21K Gold Price
                       </th>
                       <th className="w-24 py-4 text-center align-middle text-xl font-bold text-[#333333]">
                         Daily Price Change
@@ -140,7 +176,12 @@ const GoldRatesGeneral: FC = () => {
                         1 Gram
                       </td>
                       <td className="py-4 font-semibold text-[#333333] ">
-                        12930 <span className="ml-2 text-xs">PKR</span>
+                        {isLoading ? (
+                          <Loader center />
+                        ) : (
+                          goldRates[21].gram.toFixed(0)
+                        )}{" "}
+                        <span className="ml-2 text-xs">PKR</span>
                       </td>
                       <td className="flex items-center justify-center py-4 font-semibold text-[#333333]">
                         +0.54%
