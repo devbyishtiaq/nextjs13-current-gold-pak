@@ -154,6 +154,11 @@ main {
     height: 450px;
   }
 }
+
+/* quil editor css */
+.ql-editor {
+  min-height: 300px;
+}
 @tailwind components;
 @tailwind utilities;
 

@@ -1,32 +1,35 @@
 "use client";
-import React, { useState, useRef, useMemo } from "react";
-import JoditEditor from "jodit-react";
+import React, { useState } from "react";
+import dynamic from "next/dynamic";
 
-interface EditorProps {
-  placeholder?: string;
-}
+const ReactQuillNoSSR = dynamic(() => import("react-quill"), { ssr: false });
+import "react-quill/dist/quill.snow.css";
 
-const Editor: React.FC<EditorProps> = ({ placeholder }) => {
-  const editor = useRef<any>(null);
-  const [content, setContent] = useState<string>("");
-
-  const config = useMemo(
-    () => ({
-      readonly: false,
-      placeholder: placeholder || "Start typing...",
-    }),
-    [placeholder]
-  );
-
-  return (
-    <JoditEditor
-      ref={editor}
-      value={content}
-      config={config}
-      onBlur={(newContent: string) => setContent(newContent)}
-      onChange={(newContent: string) => {}}
-    />
-  );
+const modules = {
+  toolbar: [
+    [{ header: [1, 2, 3, 4, 5, 6, false] }],
+    [{ font: [] }],
+    [{ size: [] }],
+    ["bold", "italic", "underline", "strike", "blockquote"],
+    [
+      { list: "ordered" },
+      { list: "bullet" },
+      { indent: "-1" },
+      { indent: "+1" },
+    ],
+    ["link", "image", "video"],
+  ],
 };
 
-export default Editor;
+export default function Editor() {
+  const [value, setValue] = useState("");
+
+  return (
+    <ReactQuillNoSSR
+      modules={modules}
+      theme="snow"
+      value={value}
+      onChange={setValue}
+    />
+  );
+}
