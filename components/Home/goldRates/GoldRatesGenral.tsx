@@ -11,8 +11,6 @@ const GoldRatesGeneral: FC = () => {
 
   const [activeTab, setActiveTab] = useState("tab1");
 
-  const gramRate = todayRate / 31.1;
-
   // Define the gold rates for different purities
   const goldRates = useMemo(
     () => ({

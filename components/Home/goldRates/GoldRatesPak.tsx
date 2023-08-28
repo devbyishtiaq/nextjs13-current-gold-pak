@@ -17,7 +17,7 @@ const GoldRatesPak: FC = () => {
   const gramRate = todayRate / 31.1;
 
   useEffect(() => {
-    if (gramRate !== null) {
+    if (todayRate !== null) {
       // Calculate dynamic gold prices based on today's rate
       const generateRandomPrice = (min: number, max: number) =>
         Math.floor(Math.random() * (max - min + 1)) + min;
@@ -31,7 +31,7 @@ const GoldRatesPak: FC = () => {
         sialkot: generateRandomPrice(500, 1000) + gramRate,
       });
     }
-  }, [gramRate]);
+  }, [todayRate]);
 
   return (
     <section className="bg-[#F9F9F9] py-14 px-2 md:px-0">
