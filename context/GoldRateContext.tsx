@@ -1,4 +1,5 @@
 "use client";
+import { apiBaseUrl } from "@/lib/constants";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const GoldRateContext = createContext<{
@@ -27,14 +28,11 @@ export const GoldRateProvider: React.FC<GoldRateProviderProps> = ({
   useEffect(() => {
     const fetchGoldRate = async () => {
       try {
-        const response = await fetch(
-          "https://goldrate.creationnext.com/api/currentgold",
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const response = await fetch(`${apiBaseUrl}/api/currentgold`, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
 
         if (!response.ok) {
           throw new Error("Request failed");
