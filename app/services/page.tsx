@@ -36,7 +36,7 @@ const Services: NextPage = () => {
             </h2>
             <div className="mt-5 grid grid-cols-12 space-y-10">
               <div className="lg-px-20 order-1 col-span-12 flex flex-col justify-center px-5 sm:col-span-6 lg:px-10">
-                <h2 className="text-3xl lg:text-4xl">Service 1</h2>
+                <h2 className="text-3xl lg:text-4xl">Gold Testing Facility </h2>
                 <p className="mt-3 lg:mt-5">
                   Our Gold Testing Facility provides accurate and reliable
                   testing for gold, allowing you to determinethe karat of your
@@ -50,7 +50,9 @@ const Services: NextPage = () => {
                 <img src="/assets/stockphoto.png" alt="house" />
               </div>
               <div className="lg-px-20 order-3 col-span-12 flex flex-col justify-center px-5 sm:order-4 sm:col-span-6 lg:px-10">
-                <h2 className="text-3xl lg:text-4xl">Service 2</h2>
+                <h2 className="text-3xl lg:text-4xl">
+                  Buy and Sell Gold/Jewelry
+                </h2>
                 <p className="mt-3 lg:mt-5">
                   We offer a convenient platform for buying and selling gold and
                   jewelry. Whether you're looking to sell your gold or purchase
@@ -59,7 +61,9 @@ const Services: NextPage = () => {
                 </p>
               </div>
               <div className="lg-px-20 order-5 col-span-12 flex flex-col justify-center px-5 sm:order-5 sm:col-span-6 lg:px-10">
-                <h2 className="text-3xl lg:text-4xl">Service 3</h2>
+                <h2 className="text-3xl lg:text-4xl">
+                  Up-to-Date Gold Price Updates
+                </h2>
                 <p className="mt-3 lg:mt-5">
                   Stay informed with our up-to-date updates on gold prices. We
                   provide real-time information on the current market value of
@@ -74,7 +78,9 @@ const Services: NextPage = () => {
                 <img src="/assets/stockphoto.png" alt="house" />
               </div>
               <div className="lg-px-20 order-7 col-span-12 flex flex-col justify-center px-5 sm:order-8 sm:col-span-6 lg:px-10">
-                <h2 className="text-3xl lg:text-4xl">Service 4</h2>
+                <h2 className="text-3xl lg:text-4xl">
+                  Gold API for Integrations
+                </h2>
                 <p className="mt-3 lg:mt-5">
                   Simplify your integration process with our Gold API.
                   Seamlessly connect your applications, websites, or services to

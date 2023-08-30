@@ -8,13 +8,8 @@ let iconClass =
 const sideNavigation = [
   {
     name: "Dashboard",
-    href: "/dashboard",
+    href: "/admin",
     icon: <HomeIcon className={iconClass} />,
-  },
-  {
-    name: "Herosection Rates",
-    href: "/herosection-rates",
-    icon: <ChartPieIcon className={iconClass} />,
   },
   {
     name: "Write Article",
