@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import dynamic from "next/dynamic";
 
 const ReactQuillNoSSR = dynamic(() => import("react-quill"), { ssr: false });
@@ -21,15 +21,21 @@ const modules = {
   ],
 };
 
-export default function Editor() {
+type EditorProps = {
+  content: string;
+  setContent: any;
+};
+
+const Editor: FC<EditorProps> = ({ content, setContent }) => {
   const [value, setValue] = useState("");
 
   return (
     <ReactQuillNoSSR
       modules={modules}
       theme="snow"
-      value={value}
-      onChange={setValue}
+      value={content}
+      onChange={setContent}
     />
   );
-}
+};
+export default Editor;

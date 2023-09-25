@@ -29,6 +29,7 @@ export const GoldRateProvider: React.FC<GoldRateProviderProps> = ({
     const fetchGoldRate = async () => {
       try {
         const response = await fetch(`${apiBaseUrl}/api/currentgold`, {
+          method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
